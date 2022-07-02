@@ -13,7 +13,7 @@ This is a concept idea for a site to add additional events to your Google calend
 
 
 ## Screenshots
-[![screenshot](./screenshots/screenshot 1 "screenshot 1")](./screenshots/screenshot 1 "screenshot 1")
+[![screenshot](./screenshots/screenshot1 "screenshot 1")](./screenshots/screenshot1 "screenshot 1")
 ![App Screenshot](./screenshots/screenshot 1)
 ![App Screenshot](./screenshots/screenshot 2)
 ![App Screenshot](./screenshots/screenshot 3)

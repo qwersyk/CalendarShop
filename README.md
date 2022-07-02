@@ -14,13 +14,13 @@ This is a concept idea for a site to add additional events to your Google calend
 
 ## Screenshots
 ![screenshot](https://raw.githubusercontent.com/qwersyk/CalendarShop/main/screenshots/screenshot1.png#gh-light-mode-only)
-![screenshot](https://raw.githubusercontent.com/qwersyk/CalendarShop/main/screenshots/screenshot1-dark.png#gh-dark-mode-only)
+![screenshot](https://raw.githubusercontent.com/qwersyk/CalendarShop/main/screenshots/screenshot-dark1.png#gh-dark-mode-only)
 
 ![screenshot](https://raw.githubusercontent.com/qwersyk/CalendarShop/main/screenshots/screenshot2.png#gh-light-mode-only)
-![screenshot](https://raw.githubusercontent.com/qwersyk/CalendarShop/main/screenshots/screenshot2-dark.png#gh-dark-mode-only)
+![screenshot](https://raw.githubusercontent.com/qwersyk/CalendarShop/main/screenshots/screenshot-dark2.png#gh-dark-mode-only)
 
 ![screenshot](https://raw.githubusercontent.com/qwersyk/CalendarShop/main/screenshots/screenshot3.png#gh-light-mode-only)
-![screenshot](https://raw.githubusercontent.com/qwersyk/CalendarShop/main/screenshots/screenshot3-dark.png#gh-dark-mode-only)
+![screenshot](https://raw.githubusercontent.com/qwersyk/CalendarShop/main/screenshots/screenshot-dark3.png#gh-dark-mode-only)
 
 
 ## 🛠 Engine

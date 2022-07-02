@@ -1,0 +1,15 @@
+
+{% extends 'Layout/basic1.html' %}
+
+{% block Release %}-active{% endblock Release %}
+
+{% block body %}
+    {% for i in Calendars %}
+    <div class="item">
+        <a href="../{{i.id}}">
+        <img class="item-img" src="/media/{{i.icon}}" alt="">
+        <p>{{i.name}}</p>
+        </a>
+    </div>
+    {% endfor %}
+{% endblock body %}

@@ -1,0 +1,81 @@
+
+{% extends 'Layout/basic2.html' %}
+{% load static %}
+{% block How_to_create %}-active{% endblock How_to_create %}
+
+{% block body %}
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.1/assets/owl.carousel.min.css'>
+<style>
+    #customers-testimonials .item {
+        z-index: 0;
+        text-align: center;
+        padding-top: 20px;
+        opacity: .2;
+        -webkit-transform: scale3d(0.8, 0.8, 1);
+        transform: scale3d(0.8, 0.8, 1);
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+    #customers-testimonials .owl-item.active.center .item {
+        opacity: 1;
+        -webkit-transform: scale3d(1.0, 1.0, 1);
+        transform: scale3d(1.0, 1.0, 1);
+    }
+
+</style>
+<div id="customers-testimonials" class="owl-carousel">
+    <div class="item">
+        <div class="shadow-effect">
+            <img class="img-circle" src="{% static '1.png' %}" alt="">
+            1
+        </div>
+    </div>
+    <div class="item">
+        <div class="shadow-effect">
+            <img class="img-circle" src="{% static '2.png' %}" alt="">
+            2
+        </div>
+    </div>
+    <div class="item">
+        <div class="shadow-effect">
+            <img class="img-circle" src="{% static '3.png' %}" alt="">
+            3
+        </div>
+    </div>
+    <div class="item">
+        <div class="shadow-effect">
+            <img class="img-circle" src="{% static '4.png' %}" alt="">
+            4
+        </div>
+    </div>
+</div>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.1/owl.carousel.min.js'></script>
+<script>
+    jQuery(document).ready(function($) {
+        "use strict";
+        $('#customers-testimonials').owlCarousel({
+            loop: true,
+            center: true,
+            items: 3,
+            margin: 0,
+            autoplay: true,
+            dots:true,
+            autoplayTimeout: 8500,
+            smartSpeed: 450,
+            responsive: {
+                0: {
+                items: 1
+                },
+                512: {
+                items: 2
+                },
+                1024: {
+                items: 3
+                }
+            }
+        });
+    });
+</script>
+{% endblock body %}

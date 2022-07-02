@@ -1,0 +1,63 @@
+{% extends 'Layout/basic2.html' %}
+
+{% block Post %}-active{% endblock Post %}
+
+{% block body %}
+    <style>
+        .form{
+            width: 50%;
+            margin: auto;
+            min-width: 202px;
+            margin-top: 10px;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 20px;
+        }
+        .form-item{
+            width: 96%;
+            min-width: 200px;
+            margin-top: 20px;
+            padding: 2%;
+            border: none;
+            color: #1d75e8;
+            background-color: #fff;
+        }
+        h3{
+            text-align: center;
+            color: #1d75e8;
+        }
+    </style>
+    <script>
+        if("{{password}}"!=""){
+            document.cookie= "{{id}}={{password}}; path=/"
+            document.location.href="../{{id}}"
+        }
+
+    </script>
+    <form method="post" enctype="multipart/form-data" class="form">
+        <h3>{{TextPost}}</h3>
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="{{Name}}" class="form-item"><br>
+        <input type="file" name="icon" accept=".jpg, .jpeg, .png" class="form-item"><br>
+        <select name="category" class="form-item">
+            {% for i in categories %}
+            <option value="{{i.name}}">{{i.lang}}</option>
+            {% endfor %}
+        </select><br>
+
+        <input type="text" name="author" placeholder="{{Author}}" class="form-item"><br>
+        <input type="text" name="calendarID" placeholder="{{CalendarID}}" class="form-item"><br>
+        <input type="text" name="description" placeholder="{{Description}}" class="form-item"><br>
+        <select name="language" class="form-item">
+            {% for i in language %}
+            <option value="{{i.id_name}}">{{i.name}}</option>
+            {% endfor %}
+        </select><br>
+        <button type="submit" class="form-item" style="background-color: #1d75e8;color: #fff;">{{Upload}}</button>
+    </form>
+{% endblock body %}
+
+
+
+
+

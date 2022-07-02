@@ -1,0 +1,288 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{home}}</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+    {% block head %}{% endblock head %}
+    <style>
+        a{
+            text-decoration: none;
+            color: #000000;
+        }
+        .panel{
+            z-index: 2;
+            position: fixed;
+            background-color: #ffffff;
+            width: 100%;
+            min-height: 1.5cm;
+            border-bottom: 1px #dbdbdb solid;
+            /* padding-top: 0.30cm; */
+            box-shadow: 0px 4px 4px rgba(119, 119, 119, 0.123);
+        }
+        body{
+            margin: 0;
+            background-color: #ffffff;
+        }
+        .panel-icon{
+            height: 0.8cm;
+            margin-top: 0.35cm;
+            float: left;
+        }
+        .panel-center{
+            max-width: 1200px;
+            margin: auto;
+        }
+        .panel-input{
+            float: left;
+            margin-top: 0.35cm;
+            margin-left: 0.1cm;
+            display: none;
+            max-width: 200px;
+        }
+        .panel-input input{
+            height: 0.6cm;
+            border: 0;
+            border-bottom:#1a73e8 solid 0.0003cm;
+            font-family: arial;
+            font-size: 0.4cm;
+            color: #494d50;
+            max-width: 200px;
+            outline: none;
+            transition: all ease 0.3s;
+        }
+        .panel-input input:focus{
+            color: #000000;
+            border-bottom:#000000 solid 0.04cm;
+        }
+        .left-panel-input{
+            width: 210px;
+            margin: auto;
+            padding-top: 20px;
+        }
+        .left-panel-input input{
+            width: 200px;
+            height: 1cm;
+            border:#1a73e8 solid 0.003cm;
+            border-radius: 0.1cm;
+            font-weight: 200;
+            font-size: 0.6cm;
+            color: #494d50;
+            outline: none;
+            transition: all ease 0.3s;
+        }
+        .left-panel-input input:focus{
+            color: #000000;
+            border:#1559b3 solid 0.003cm;
+        }
+        .panel-h1{
+            font-size: 0.4cm;
+            float: left;
+            margin-left: 0.1cm;
+            color: #6d6d6d;
+            font-family: arial;
+        }
+        .body-center{
+            padding-top: 1.5cm;
+            max-width: 1200px;
+            margin: auto;
+            min-height: calc(100vh - 1.5cm);
+            background-color: #fafafa;
+        }
+        .left-panel{
+            float: left;
+            min-height: calc(100vh - 1.5cm);
+            width: 240px;
+            background-color: #f1f3f4;
+        }
+        .right-panel{
+            min-height: calc(100vh - 1.5cm);
+            width: calc(100% - 240px);
+            float: left;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            height: calc(100vh - 1.5cm);
+            overflow: auto;
+        }
+        .item{
+            margin: 20px;
+            float: left;
+            width: 200px;
+        }
+        .item-img{
+            width: 100%;
+        }
+        @media (max-width: 960px) {
+            .panel-input{
+            display: block;
+            }
+            .left-panel{
+                display: none;
+            }
+            .panel-h1{
+                display: none;
+            }
+            .right-panel{
+                width: 100%;
+            }
+            body{
+                margin: 0;
+                background-color: #fafafa;
+            }
+        }
+        .btn1{
+            margin-top: 10px;
+            height: 20px;
+            width: 200px;
+            padding: 10px 0px 10px 25px;
+            font-family: arial;
+            height: 25px;
+        }
+        .btn1 a{
+            text-decoration: none;
+            color: #000000;
+        }
+        .btn1-active{
+            margin-top: 10px;
+            height: 20px;
+            width: 200px;
+            padding: 10px 0px 10px 25px;
+            font-family: arial;
+            background-color: #1a73e8;
+            border-radius: 0px 25px 25px 0px;
+        }
+        .btn1-active a{
+            text-decoration: none;
+            color: #ffffff;
+        }
+        .fence{
+            margin: 1px 0 0 20px;
+            width: 200px;
+            height: 2px;
+            background-color: #DADCE0;
+        }
+        .category{
+            margin-top: 10px;
+            height: 20px;
+            width: 200px;
+            padding: 5px 0px 5px 25px;
+            font-family: arial;
+            height: 25px;
+        }
+        .category a{
+            text-decoration: none;
+            color: #000000;
+        }
+        .category a:hover{
+            color: #1a73e8;
+        }
+        .category-active a{
+            text-decoration: none;
+            font-family: arial;
+            color: #1a73e8;
+        }
+        .category-active{
+            margin-top: 10px;
+            height: 20px;
+            width: 200px;
+            padding: 5px 0px 5px 25px;
+            height: 25px;
+        }
+        .header{
+            margin-top: 10px;
+            height: 20px;
+            width: 200px;
+            padding: 5px 0px 5px 25px;
+            font-family: arial;
+            font-weight: 600;
+            color: #272727;
+            height: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="panel">
+        <div class="panel-center">
+        <img class="panel-icon" src="{% static 'icon.png' %}" alt="">
+        <div class="panel-input">
+            <input type="text" placeholder="{{Search}}">
+        </div>
+        
+        <h1 class="panel-h1">
+            {{Online_store}}<br>
+            {{Google_calendar}}
+        </h1>
+        </div>
+    </div>
+    <div class="body-center">
+        <div class="left-panel">
+            <div class="left-panel-input">
+                <input type="text" placeholder="{{Search}}">
+            </div>
+            <div class="fence"></div>
+            <div class="btn1-active">
+                <a href="../Home">
+                    {{Watch}}
+                </a>
+            </div>
+            <div class="btn1">
+                <a href="../Create">{{Create}}</a>
+            </div>
+            <div class="fence"></div>
+            <div class="header">
+                {{Categories}}
+            </div>
+            <div class="category{% block Recommended %}{% endblock Recommended %}">
+                <a href="../Home">
+                {{Recommended}}
+                </a>
+            </div>
+            <div class="category{% block Event %}{% endblock Event %}">
+                <a href="../Event">
+                {{Event}}
+                </a>
+            </div>
+            <div class="category{% block Holidays %}{% endblock Holidays %}">
+                <a href="../Holidays">
+                {{Holidays}}
+                </a>
+            </div>
+            <div class="category{% block Sport %}{% endblock Sport %}">
+                <a href="../Sport">
+                {{Sport}}
+                </a>
+            </div>
+            <div class="category{% block Release %}{% endblock Release %}">
+                <a href="../Release">
+                {{Release}}
+                </a>
+            </div>
+            <div class="category{% block Other %}{% endblock Other %}">
+                <a href="../Other">
+                {{Other}}
+                </a>
+            </div>
+        </div>
+        <div class="right-panel">
+            {% block body %}{% endblock body %}
+        </div>
+    </div>
+    <script>
+        $(".left-panel-input").children("input").keyup(function(event){
+            if(event.keyCode == 13){
+                location.href="../search=/"+($(".left-panel-input").children("input").val());
+            };
+        });
+        $(".panel-input").children("input").keyup(function(event){
+            if(event.keyCode == 13){
+                location.href="../search=/"+($(".panel-input").children("input").val());
+            };
+        });
+    </script>
+</body>
+</html>
